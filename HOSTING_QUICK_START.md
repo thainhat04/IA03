@@ -10,9 +10,10 @@ Get both your backend and frontend online in 15 minutes!
 
 1. Go to [railway.app](https://railway.app) → Sign up with GitHub
 2. Click **"New Project"** → **"Deploy from GitHub repo"**
-3. Select your repository
+3. Select your repository: `thainhat04/IA03`
 4. Click **"+ New"** → **"Database"** → **"PostgreSQL"**
-5. Click **"+ New"** → **"GitHub Repo"** → Select repo → Set root to `backend`
+5. Click **"+ New"** → **"GitHub Repo"** → Select repo → **Set root directory to `backend`**
+   - **Important**: Railway will auto-detect NestJS and use `railway.json` config (no Docker needed!)
 6. Go to backend service → **"Variables"** → Add:
    ```
    DATABASE_URI=${{Postgres.DATABASE_URL}}
@@ -78,7 +79,10 @@ VITE_API_URL=https://your-backend.railway.app
 
 **404 on Frontend?** → Make sure `VITE_API_URL` points to your backend URL
 
-**Build Failed?** → Check build logs, ensure all dependencies are in package.json
+**Build Failed?** → 
+- Check Railway is using **Nixpacks** (not Docker) in Settings → Build
+- Ensure Root Directory is set to `backend`
+- Check build logs for missing dependencies
 
 ---
 

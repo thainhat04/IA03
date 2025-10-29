@@ -8,12 +8,19 @@ This directory contains configuration files for hosting your application on vari
 Configuration for **Railway** backend deployment. Railway will automatically detect and use this file.
 
 **What it does:**
+- Uses **Nixpacks** builder (not Docker) - installs Node.js automatically
 - Configures build and start commands for the backend
 - Sets up automatic restarts on failure
 
+**Important:**
+- Make sure Railway **Root Directory** is set to `backend` in Railway dashboard
+- Railway Settings → Build → Builder should show "Nixpacks" (not Docker)
+- If Railway detects Docker, disable it in Settings → Build
+
 **Usage:**
 1. Push this file to your repository
-2. Deploy on Railway (it will auto-detect)
+2. Deploy on Railway → Set Root Directory to `backend`
+3. Railway will auto-detect and use this config
 
 ---
 

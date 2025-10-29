@@ -93,7 +93,8 @@ This guide provides step-by-step instructions for hosting both backend and front
 4. **Configure Backend Service**
    - Railway should auto-detect your backend (NestJS)
    - If not, click "+ New" → "GitHub Repo" and select your repo
-   - Set the **Root Directory** to `backend`
+   - **Set the Root Directory to `backend`** (Critical!)
+   - Railway will use `railway.json` config file (uses Nixpacks, not Docker)
 
 5. **Set Environment Variables**
    - Go to your backend service → "Variables" tab
